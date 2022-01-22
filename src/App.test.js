@@ -1,11 +1,12 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import App from './App';
+import App, { createNewColor } from './App';
 
-const findButton = () => {
+
+export const findButton = () => {
   return screen.getByRole('button', {name: 'Turn to red'});
 };
 
-describe('App Test Suite', () => {
+describe('App Component', () => {
   
   test('should have a button', () => {
     render(<App />);
@@ -27,5 +28,12 @@ describe('App Test Suite', () => {
     expect(element.textContent).toBe('Turn to blue');
   });
 
+});
+
+describe('Testing create color function', () => {
+  test('should call createColor Function and return a new color', () => {
+    createNewColor();
+    fail();
+  });
 });
 
