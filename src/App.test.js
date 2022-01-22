@@ -2,14 +2,11 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 
 describe('App Test', () => {
-  test('renders learn react link', () => {
+  test('should have a button', () => {
     render(<App />);
-    const linkElement = screen.getByText(/Testing demo/i);
-    expect(linkElement).toBeInTheDocument();
+    const element = screen.getByRole('button');
+    expect(element).toBeInTheDocument();
   });
 
-  test('should fail', () => {
-    throw new Error('Not yet implemented');
-  });
 });
 
