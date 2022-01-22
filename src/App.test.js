@@ -25,7 +25,7 @@ describe('App Component', () => {
     const element = screen.getByRole('button', { name: 'Turn to red' });
     fireEvent.click(element);
     expect(element).toHaveStyle({ backgroundColor: 'red' });
-    expect(element.textContent).toBe('Turn to blue');
+    expect(element).toHaveTextContent('Turn to blue');
   });
 
 });
