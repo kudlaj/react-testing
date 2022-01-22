@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <h1>Testing demo</h1>
       <div><button style={{ backgroundColor: buttonColor }}
-      onClick={() => setButtonColor(newButtonColor)}
+        onClick={() => setButtonColor(newButtonColor)}
       >Turn to {newButtonColor}</button></div>
     </div>
   );
