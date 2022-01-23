@@ -33,7 +33,7 @@ describe('App Component', () => {
 describe('Testing create color function', () => {
   test('should call createColor Function and return a new color', () => {
     createNewColor();
-    fail();
+    jest.fail();
   });
 });
 
