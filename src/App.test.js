@@ -10,8 +10,8 @@ describe('App Test', () => {
     expect(element).toBeInTheDocument();
     fireEvent.click(element);
     await screen.findByText('A New Hope');
-    const movie = screen.getByRole('listitem');
-    expect(movie).toBeInTheDocument();
+    const movie = screen.getAllByRole('listitem');
+    expect(movie.length).toBe(1);
   });
 
 });
