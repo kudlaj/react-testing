@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import MoviesList from './components/MoviesList';
 
 
-export const API = {
+export const RestApiUtils = {
   getMovies() {
       return fetch('https://swapi.dev/api/films/')
       .then(res => res.json())
@@ -13,7 +13,7 @@ export const API = {
 function App() {
   const [movies, setMovies] = useState([]);
   const fetchMoviesHandler = () => {
-    API.getMovies().then(data => {
+    RestApiUtils.getMovies().then(data => {
       setMovies(data.results.map(movie => {
         return {
           id: movie.episode_id,

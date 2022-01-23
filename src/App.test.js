@@ -9,7 +9,7 @@ describe('App Test', () => {
     const element = screen.getByRole('button');
     expect(element).toBeInTheDocument();
     fireEvent.click(element);
- 
+    await screen.findByText('A New Hope');
     const movie = screen.getByRole('listitem');
     expect(movie).toBeInTheDocument();
   });
