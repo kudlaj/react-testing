@@ -21,8 +21,7 @@ describe('App Test Suite', () => {
             }
         }
         const somethingSpy = jest.spyOn(myOnClickFunctionObj, 'clickHandler');
-        const utils = render(<AppButton buttonLabel='My button' buttonColor='red' onClickFunct={myOnClickFunctionObj.clickHandler} />);
-        // utils.debug();
+        render(<AppButton buttonLabel='My button' buttonColor='red' onClickFunct={myOnClickFunctionObj.clickHandler} />);
         const element = screen.getByRole('button');
         expect(element).toBeInTheDocument();
         fireEvent.click(element);
