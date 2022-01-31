@@ -22,6 +22,7 @@ describe('App Test Suite', () => {
     render(<App />);
     const element = screen.getByRole('button', {name: 'Turn to red'});
     fireEvent.click(element);
+    debugger;
     expect(element).toHaveStyle({ backgroundColor: 'red'});
     expect(element).toHaveTextContent('Turn to blue');
   });
