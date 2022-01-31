@@ -18,13 +18,17 @@ describe('App Test Suite', () => {
     test('should have a button and execute spy when clicked', () => {
         const myOnClickFunctionObj = {
             clickHandler: () => {
+                console.log('**** CLICKED ****');
             }
         }
-        const somethingSpy = jest.spyOn(myOnClickFunctionObj, 'clickHandler');
+        const somethingSpy = jest.spyOn(myOnClickFunctionObj, 'clickHandler').mockImplementation(() => {
+            console.log('CLICKED 2')
+        });
         render(<AppButton buttonLabel='My button' buttonColor='red' onClickFunct={myOnClickFunctionObj.clickHandler} />);
         const element = screen.getByRole('button');
         expect(element).toBeInTheDocument();
         fireEvent.click(element);
         expect(somethingSpy).toBeCalled();
+        expect(somethingSpy).toHaveBeenCalledTimes(1);
     });
 });
