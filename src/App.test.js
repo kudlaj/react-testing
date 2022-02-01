@@ -1,15 +1,16 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
-
+import { Provider } from 'react-redux';
+import store from './store/index';
 
 describe('App Test', () => {
 
   test('should show list with movies when button is clicked', async () => {
-    render(<App />);
+    render(<Provider store={store}><App /></Provider>);
     const element = screen.getByRole('button');
     expect(element).toBeInTheDocument();
     fireEvent.click(element);
-    // await screen.findByText('A New Hope');
+    await screen.findByText('A New Hope');
     const movie = screen.getAllByRole('listitem');
     expect(movie.length).toBe(2);
   });
