@@ -1,19 +1,13 @@
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
 import MoviesList from './components/MoviesList';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchMoviesData } from './store/movies-store'
 
 
-export const RestApiUtils = {
-  getMovies() {
-      return fetch('https://swapi.dev/api/films/')
-      .then(res => res.json())
-  }
-}
-
 function App() {
   const moviesSlice = useSelector((state) => state.movies);
+  console.log(moviesSlice);
   const dispatch = useDispatch();
 
   const fetchMoviesHandler = () => {
