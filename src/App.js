@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import AppButton from './components/AppButton';
+import AppChildElement from './components/AppChildElement';
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <h1>Testing demo</h1>
       <AppButton buttonLabel={buttonLabel} buttonColor={buttonColor} onClickFunct={toggleColor} />
+      <AppChildElement label='Test label' />
     </div>
   );
 }

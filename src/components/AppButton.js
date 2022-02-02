@@ -1,6 +1,5 @@
 
-function AppButton(props) {
-    const { buttonColor, buttonLabel, onClickFunct } = props;
+function AppButton({ buttonColor, buttonLabel, onClickFunct } ) {
     const style = {
         backgroundColor: buttonColor,
         padding: '10px'
