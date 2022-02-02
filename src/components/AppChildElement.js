@@ -1,5 +1,4 @@
 function AppChildElement({ label }) {
-
     return (
         <div>{label}</div>
     );

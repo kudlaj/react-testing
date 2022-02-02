@@ -5,7 +5,7 @@ import App from './App';
 const mockChildComponent = jest.fn();
 jest.mock('./components/AppChildElement', () => (props) => {
   mockChildComponent(props);
-  return <mock-childComponent />;
+  return <div>{props.label}</div>;
 });
 
 describe('App Test Suite', () => {
@@ -32,7 +32,7 @@ describe('App Test Suite', () => {
   });
 
   test('should pass data to child component', () => {
-    render(<App />);
+    const utils = render(<App />);
     expect(mockChildComponent).toHaveBeenCalledWith(
       expect.objectContaining({
         label: 'Test label'

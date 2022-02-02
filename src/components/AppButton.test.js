@@ -10,6 +10,7 @@ describe('App Test Suite', () => {
         // utils.debug();
         const element = screen.getByRole('button');
         expect(element).toBeInTheDocument();
+        expect(element).toHaveTextContent('My button');
         fireEvent.click(element);
         expect(mockHandler.mock.calls).toHaveLength(1);
         expect(mockHandler).toHaveBeenCalled();
