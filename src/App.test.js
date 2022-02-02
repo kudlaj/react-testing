@@ -2,10 +2,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 import App from './App';
 
-const findButton = () => {
-  return screen.getByRole('button', { name: 'Turn to red' });
-};
-
 const mockChildComponent = jest.fn();
 jest.mock('./components/AppChildElement', () => (props) => {
   mockChildComponent(props);
@@ -13,6 +9,7 @@ jest.mock('./components/AppChildElement', () => (props) => {
 });
 
 describe('App Test Suite', () => {
+
   test('should have a button', () => {
     render(<App />);
     const element = screen.getByRole('button');
@@ -21,7 +18,7 @@ describe('App Test Suite', () => {
 
   test('should have a button with the initial text: "Turn to red" and the color blue', () => {
     render(<App />);
-    const element = findButton();
+    const element = screen.getByRole('button', { name: 'Turn to red' });
     expect(element).toHaveStyle({ backgroundColor: 'blue' })
   });
 
@@ -35,7 +32,7 @@ describe('App Test Suite', () => {
   });
 
   test('should pass data to child component', () => {
-    render(<App r/>);
+    render(<App />);
     expect(mockChildComponent).toHaveBeenCalledWith(
       expect.objectContaining({
         label: 'Test label'
