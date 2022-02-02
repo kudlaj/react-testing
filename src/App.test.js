@@ -38,6 +38,7 @@ describe('App Test', () => {
     const middleware = [thunk]
     const mockStore = configureMockStore(middleware)(MOCK_STORE_INITIAL);
     const spy = jest.spyOn(mockStore, 'dispatch');
+
     render(<Provider store={mockStore}><App /></Provider>);
     const element = screen.getByRole('button');
     expect(element).toBeInTheDocument();
