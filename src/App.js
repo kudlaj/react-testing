@@ -7,9 +7,7 @@ import { fetchMoviesData } from './store/movies-store'
 
 function App() {
   const moviesSlice = useSelector((state) => state.movies);
-  console.log(moviesSlice);
   const dispatch = useDispatch();
-
   const fetchMoviesHandler = () => {
     dispatch(fetchMoviesData());
   };
