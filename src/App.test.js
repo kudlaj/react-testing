@@ -24,7 +24,7 @@ const MOCK_STORE_INITIAL = {
 
 describe('App Test', () => {
 
-  xtest('should show list with movies when button is clicked', async () => {
+  test('should show list with movies when button is clicked', async () => {
     render(<Provider store={store}><App /></Provider>);
     const element = screen.getByRole('button');
     expect(element).toBeInTheDocument();
@@ -76,7 +76,7 @@ describe('App Test', () => {
         ]
       }
     });
-    console.log(state);
+    expect(state.moviesList).toHaveLength(2);
   });
 
 });
