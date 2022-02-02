@@ -38,7 +38,6 @@ describe('App Test', () => {
     const middleware = [thunk]
     const mockStore = configureMockStore(middleware)(MOCK_STORE_INITIAL);
     const spy = jest.spyOn(mockStore, 'dispatch');
-
     render(<Provider store={mockStore}><App /></Provider>);
     const element = screen.getByRole('button');
     expect(element).toBeInTheDocument();
@@ -52,7 +51,6 @@ describe('App Test', () => {
     const middleware = [thunk]
     const mockStore = configureMockStore(middleware)(MOCK_STORE_INITIAL);
     await mockStore.dispatch(fetchMoviesData());
-    render(<Provider store={mockStore}><App /></Provider>);
     expect((mockStore.getActions()[0].type)).toBe('movies/setMovieData');
     expect(mockStore.getActions()[0].payload.movies).toHaveLength(2);
   });
