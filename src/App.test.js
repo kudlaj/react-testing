@@ -12,7 +12,7 @@ describe('App Test', () => {
     throw new Error('Not yet implemented');
   });
 
-  test('should have a button with the initial text: "Turn to red" and the color blue', () => {
+  test('should have a blue button with the initial text: "Turn to red"', () => {
     throw new Error('Not yet implemented');
   });
 
